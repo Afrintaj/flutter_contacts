@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 void main() {
   Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
-}
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(MyApp());
+  }
+
   runApp(MyApp());
 }
 
@@ -52,7 +53,6 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Contacts"),
-        centerTitle: true,
       ),
       body: Container(),
     );
