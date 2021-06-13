@@ -1,11 +1,12 @@
 import 'dart:async';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_contact_app/Screens/Contacts/Contacts.dart';
 
-void main() {
-  Future<void> main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
-}
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => SecondScreen())));
+            context, MaterialPageRoute(builder: (context) => Contacts())));
   }
 
   @override
@@ -43,18 +44,5 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
         color: Colors.white,
         child: FlutterLogo(size: MediaQuery.of(context).size.height));
-  }
-}
-
-class SecondScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Contacts"),
-        centerTitle: true,
-      ),
-      body: Container(),
-    );
   }
 }
